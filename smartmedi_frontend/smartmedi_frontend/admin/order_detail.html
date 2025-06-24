@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <i class="bi bi-speedometer2"></i>
+      <span>Admin Panel</span>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+        <a href="index.html" class="sidebar-nav-link">
+          <i class="bi bi-house-door"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="orders.html" class="sidebar-nav-link">
+          <i class="bi bi-cart3"></i>
+          <span>Orders</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="deliveries.html" class="sidebar-nav-link">
+          <i class="bi bi-truck"></i>
+          <span>Deliveries</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="inventory.html" class="sidebar-nav-link">
+          <i class="bi bi-box-seam"></i>
+          <span>Inventory</span>
+        </a>
+      </li>
+       <li class="sidebar-nav-item">
+      <a href="customers.html" class="sidebar-nav-link">
+        <i class="bi bi-person-lines-fill"></i>
+        <span>Customers</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-nav-item">
+      <a href="payments.html" class="sidebar-nav-link">
+        <i class="bi bi-credit-card"></i>
+        <span>Payments</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-nav-item">
+      <a href="compliance.html" class="sidebar-nav-link">
+        <i class="bi bi-shield-check"></i>
+        <span>Compliance</span>
+      </a>
+    </li>
+      <li class="sidebar-nav-item">
+        <a href="users.html" class="sidebar-nav-link">
+          <i class="bi bi-people"></i>
+          <span>Users</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item mt-4">
+        <a href="#" class="sidebar-nav-link" onclick="logout()">
+          <i class="bi bi-box-arrow-left"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="#" class="sidebar-nav-link">
+          <i class="bi bi-people"></i>
+          <span>Users</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item mt-4">
+        <a href="#" class="sidebar-nav-link" onclick="logout()">
+          <i class="bi bi-box-arrow-left"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <h1 class="header-title">Order Details</h1>
+      <div class="last-updated text-muted small" id="lastUpdated"></div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="order-header d-flex justify-content-between align-items-center">
+            <div>
+              <h4 class="mb-0">Order<span id="orderId">Loading...</span></h4>
+              <span class="text-muted" id="orderDate"></span>
+            </div>
+            <div id="orderStatusBadge" class="status-badge badge"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <div class="card customer-card h-100">
+            <div class="card-header bg-white">
+              <h5 class="mb-0">Customer Information</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>Name:</strong> <span id="customerName"></span></p>
+                  <p><strong>Email:</strong> <span id="customerEmail"></span></p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Phone:</strong> <span id="customerPhone"></span></p>
+                  <p><strong>Customer ID:</strong> <span id="customerId"></span></p>
+                </div>
+              </div>
+              <div class="mt-3">
+                <p><strong>Address:</strong></p>
+                <p id="customerAddress" class="text-muted"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 mb-4">
+          <div class="card order-card h-100">
+            <div class="card-header bg-white">
+              <h5 class="mb-0">Order Information</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><strong>Order Date:</strong> <span id="orderDateFull"></span></p>
+                  <p><strong>Status:</strong> <span id="orderStatus"></span></p>
+                </div>
+                <div class="col-md-6">
+                  <p><strong>Customer ID:</strong> <span id="orderCustomerId"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex justify-content-between">
+            <a href="orders.html" class="btn btn-outline-secondary">
+              <i class="bi bi-arrow-left"></i> Back to Orders
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/order-details-script.js"></script>
+</body>
+</html>
