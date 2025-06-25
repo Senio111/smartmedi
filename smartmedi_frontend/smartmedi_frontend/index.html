@@ -76,7 +76,7 @@
           return;
         }
         localStorage.setItem("access_token", data.access_token);
-        window.location.href = "/dashboard/index.html";
+        window.location.href = "admin/index.html";
       },
       error: function () {
         $("#loginMsg").text("Invalid credentials or server error.");
